@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+    .container {
+      background: #f3f0f3;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 20px;
+      width: 100%;
+      max-width: 350px;
+      min-width: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      text-align: center;
+      color: #007BFF;
+      margin: 10px 0;
+      font-family: 'Pacifico', cursive;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .label-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+      width: 100%;
+    }
+    label {
+      margin-right: 8px;
+      color: #555;
+      font-weight: bold;
+      width: 120px;
+    }
+    input[type="text"], input[type="checkbox"] {
+      padding: 5px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type="checkbox"] {
+      width: auto;
+    }
+    button {
+      width: 100%;
+      padding: 8px;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .output-label {
+      margin-top: 10px;
+    }
+    .flex-end {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+    .send-button {
+      margin-left: 10px;
+      padding: 5px 10px;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .send-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="icon258.png" alt="Logo" class="logo">
+    <h2>Ahoy, EZPasser!</h2>
+    <div class="label-container">
+      <input type="checkbox" id="show-password"> 
+      <label for="show-password">Show Password</label>
+      <input type="password" id="privkey" placeholder="Enter private key">
+    </div>
+    <div class="label-container">
+      <label for="email">Email:</label>
+      <input type="text" id="email" placeholder="Enter email">
+    </div>
+    <div class="label-container">
+      <label for="servername">Server:</label>
+      <input type="text" id="servername" placeholder="Enter server name">
+    </div>
+    <div class="label-container">
+      <input type="checkbox" id="alphanum" name="alphanumonly">
+      <label for="alphanum">Letters and Numbers only</label>
+    </div>
+    <div class="label-container">
+      <input type="checkbox" id="longpassword" name="Xtra-long">
+      <label for="longpassword">16 chars (default 12)</label>
+    </div>
+    <div class="label-container">
+      <input type="checkbox" id="2fa-check">
+      <label for="2fa-check">Get email 2FA code:</label>
+    </div>
+    <button id="generate">Generate Password</button>
+    <div class="label-container">
+      <input type="text" id="2fa" placeholder="2FA code">
+      <button class="send-button" id="send_button">Send</button>
+    </div>
+    <div class="label-container">
+      <label for="password" class="output-label">Generated Password:</label>
+      <input type="text" id="password" readonly>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
