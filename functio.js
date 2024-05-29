@@ -55,7 +55,7 @@ window.onload = function() {
     const hex_hash = bytesToHex(hashedBytes);
   
     try {
-      const response = await fetch('http://192.168.150.115:5000/process', {
+      const response = await fetch('https://realproject-ysnfbl3z5a-zf.a.run.app/process', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
